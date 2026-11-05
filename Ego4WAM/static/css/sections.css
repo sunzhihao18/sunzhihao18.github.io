@@ -1,0 +1,267 @@
+.demo-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.demo-rollout {
+  min-width: 0;
+  margin: 0;
+}
+
+.demo-rollout figcaption {
+  margin-top: 8px;
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.media-slot {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.media-slot video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.why-list {
+  display: grid;
+  gap: 64px;
+  margin-top: 44px;
+}
+
+.why-block {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 36px;
+  align-items: center;
+}
+
+.why-num {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.why-text p {
+  margin: 0;
+  color: var(--fg-soft);
+}
+
+.clip-navigation {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 36px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.clip-scroll {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--fg);
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.clip-scroll svg {
+  width: 18px;
+  height: 18px;
+}
+
+.clip-scroll:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.clip-scroll:hover:not(:disabled) {
+  border-color: var(--fg-muted);
+}
+
+.clip-tabs {
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+  padding: 4px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fg-muted) transparent;
+  cursor: grab;
+}
+
+.clip-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.clip-tabs::-webkit-scrollbar-thumb {
+  background: var(--fg-muted);
+  border-radius: 3px;
+}
+
+.clip-tabs.is-dragging,
+.clip-tabs.is-dragging .clip-tab {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.clip-tab {
+  display: flex;
+  flex: 0 0 150px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg-muted);
+  font:
+    600 0.74rem/1.35 "Manrope",
+    sans-serif;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.clip-tab img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 9px;
+  background: #fff;
+  object-fit: cover;
+  opacity: 0.62;
+  outline: 1px solid var(--border);
+  outline-offset: -1px;
+  transition:
+    opacity 0.15s ease,
+    outline-color 0.15s ease;
+}
+
+.clip-tab:hover {
+  color: var(--fg-soft);
+}
+
+.clip-tab:hover img {
+  opacity: 0.85;
+}
+
+.clip-tab.is-active {
+  color: var(--fg);
+}
+
+.clip-tab.is-active img {
+  opacity: 1;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.clip-tab:focus-visible {
+  outline: none;
+}
+
+.clip-tab:focus-visible img {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.data-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 32px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+}
+
+.data-stats li {
+  padding: 18px 4px 16px;
+  text-align: center;
+}
+
+.data-stats li + li {
+  border-left: 1px solid var(--border);
+}
+
+.data-stats b {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.data-stats span {
+  color: var(--fg-muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.why-block > * {
+  min-width: 0;
+}
+.why-block .figure {
+  margin: 0;
+}
+.clip-player {
+  margin-top: 28px;
+}
+.clip-caption {
+  margin-top: 14px !important;
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+}
+@media (max-width: 860px) {
+  .why-block {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+@media (max-width: 720px) {
+  .demo-pair {
+    gap: 12px;
+  }
+  .why-list {
+    gap: 48px;
+    margin-top: 32px;
+  }
+  .clip-tab {
+    flex-basis: 124px;
+  }
+  .clip-navigation {
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    gap: 6px;
+  }
+  .clip-scroll {
+    width: 32px;
+    height: 32px;
+  }
+  .data-stats {
+    grid-template-columns: 1fr;
+  }
+  .data-stats li + li {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .data-stats b {
+    font-size: 1.6rem;
+  }
+}
